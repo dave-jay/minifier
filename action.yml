@@ -1,0 +1,19 @@
+name: 'Minify Css Js and Html files in GitHub Action'
+description: 'Minify code and push to another branch'
+author: Amirhossein Meydani
+branding:
+  color: blue
+  icon: minimize-2
+
+inputs:
+  repo:
+    description: 'Current repo'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        cd ${{ github.action_path }}/script
+        sudo bash minify.sh ${{github.repository}}
+      shell: bash
