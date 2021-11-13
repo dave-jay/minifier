@@ -2,7 +2,7 @@
 
 # Creating workspace
 mkdir github && cd github
-git clone $1 workspace
+git clone $1 --branch $2 workspace
 cd workspace
 
 # Getting all css files in project
